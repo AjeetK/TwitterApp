@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Programming Language Trend Analysis</title>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+	</head>
+	<body>
+		<h1 align="center">Programming Language Trend Analysis Using Tweets</h1>
+		
+		
+		<!-- Listing Programming languages -->
+		<h2 align="center"> Select Programming language for analysis </h2>
+		<form method="post" action="{{ url_for('fetch_tweet') }}">
+		<div  style="height:20%;width:80%" >
+		{% for item in language_list %}
+			<input type="checkbox" name="lang" value={{item}}> {{ item }}
+		{% endfor %}
+		</div>
+		<button align="center" type="submit">Fetch Tweets</button>
+		</form>
+
+		{%if page_type=="got"%}
+		{%for item in lang_list%}
+		<li>{{item}}</li>
+		{% endfor%}
+		{% endif %}
+	</body>
+</html>
