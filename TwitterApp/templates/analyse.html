@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Programming Language Trend Analysis</title>
+	
+	</head>
+	<body>
+		<h1 align="center">Analysis</h1>
+		
+		
+		<!-- Listing Programming languages -->
+		<h2 align="center"> Fetching Tweets.... </h2>
+		<form method="post" action="{{ url_for('stop_fetching') }}">
+		<div  style="height:20%;width:80%" >
+		
+		
+		</form>
+		{%if page_type=="analyse"%}
+		<h3>analyse page</h3>
+		Total No. of Tweets - {{total_tweets}}
+
+		<table>
+		{%for x in dict%}
+		<tr><td>{{x}}</td><td>{{ dict[x]|length }}</td></tr>
+		{% endfor%}
+		{% endif %}
+		</table>
+		
+	</body>
+</html>
